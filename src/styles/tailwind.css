@@ -1,0 +1,9 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.textNew {
+@apply text-white bg-orange-600;
+}
