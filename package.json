@@ -11,8 +11,12 @@
     "react-scripts": "3.4.3"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm-run-all build:tailwind --parallel watch:tailwind start:react",
+    "start:react": "react-scripts start",
+    "prebuild": "cross-env NODE_ENV=production run-s build:tailwind build:tailwind",
     "build": "react-scripts build",
+    "build:tailwind": "postcss src/styles/tailwind.css -o src/styles/main.css",
+    "watch:tailwind": "chokidar \"src/**/*.css\" \"src/**/*.scss\" -i \"public/main.css\" -c \"npm run build:tailwind\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
