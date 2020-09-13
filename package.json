@@ -1,7 +1,7 @@
 {
   "name": "sic-z",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -16,7 +16,7 @@
     "prebuild": "cross-env NODE_ENV=production run-s build:tailwind build:tailwind",
     "build": "react-scripts build",
     "build:tailwind": "postcss src/styles/tailwind.css -o src/styles/main.css",
-    "watch:tailwind": "chokidar \"src/**/*.css\" \"src/**/*.scss\" -i \"public/main.css\" -c \"npm run build:tailwind\"",
+    "watch:tailwind": "chokidar \"src/**/*.css\" \"src/**/*.scss\" -i \"src/styles/main.css\" -c \"npm run build:tailwind\"",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
